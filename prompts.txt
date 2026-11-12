@@ -1,0 +1,1667 @@
+╭─── Claude Code v2.1.220 ─────────────────────────────────────────────────────╮
+│                                                  │ Tips for getting started  │
+│                Welcome back Arjun!               │ Run /init to create a CL… │
+│                                                  │ ───────────────────────── │
+│                      ▐▛███▜▌                     │ What's new                │
+│                     ▝▜█████▛▘                    │ Added the Monitor tool a… │
+│                       ▘▘ ▝▝                      │ Fixed requests failing b… │
+│                                                  │ Fixed background cleanup… │
+│         Opus 5 · Claude Team · sealab-wm         │ /release-notes for more   │
+│   ~/444-fall26/l3-crawler/os-crawler-framework   │                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+❯ /context 
+  ⎿  Context Usage
+     ⛁ ⛁ ⛁ ⛀ ⛀ ⛀ ⛀ ⛶ ⛶ ⛶   Sonnet 5
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   claude-sonnet-5
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   37.3k/967k tokens (4%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ 
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   Estimated usage by category
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ System prompt: 9.1k tokens (0.9%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ System tools: 25.5k tokens (2.6%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ MCP tools: 721 tokens (0.1%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Skills: 2k tokens (0.2%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛝ ⛝ ⛝   ⛁ Messages: 8 tokens (0.0%)
+                           ⛶ Free space: 896.7k (92.7%)
+                           ⛝ Autocompact buffer: 33k tokens (3.4%)
+
+     Auto-compact window: 967k tokens
+
+     MCP tools · /mcp (loaded on-demand)
+     └ 67 tools · 721 tokens
+
+     Skills · /skills
+     └ 15 skills · 2k tokens
+
+     /context all to expand
+
+❯ /model                                                                        
+  ⎿  Set model to Opus 5 (1M context) and saved as your default for new sessions
+
+❯ /context 
+  ⎿  Context Usage
+     ⛀ ⛁ ⛁ ⛁ ⛁ ⛀ ⛀ ⛁ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   Opus 5 (1M context)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   claude-opus-5[1m]
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   29.9k/1m tokens (3%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ 
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   Estimated usage by category
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ System prompt: 2.5k tokens (0.3%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ System tools: 19.8k tokens (2.0%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ MCP tools: 720 tokens (0.1%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Skills: 2k tokens (0.2%)
+     ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶ ⛶   ⛁ Messages: 4.8k tokens (0.5%)
+                                               ⛶ Free space: 970.1k (97.0%)
+
+     MCP tools · /mcp (loaded on-demand)
+     └ 67 tools · 720 tokens
+
+     Skills · /skills
+     └ 15 skills · 2k tokens
+
+     /context all to expand
+
+❯ /plan                                                                         
+  ⎿  Enabled plan mode
+
+❯ The end result of this project is to have a working web crawler, which is     
+  tested on web pages that use a limited subset of html (just href links). The  
+  crawler must use multiple threads to achieve higher performance.              
+                                                                                
+  The crawler will have two groups of threads. The downloaders will be          
+  responsible for fetching new pages from the Internet. The parsers will scan   
+  the downloaded pages for new links. There are the circular interactions       
+  between the two groups, meaning when a downloader fetches a new page, it      
+  creates more work for a parser, and when a parser finds a new link, it        
+  creates more work for a downloader.                                           
+                                                                                
+  I have split the workload into 3 parts: building the queues & visited         
+  trackers, implementing thread pools & concurrency, and writing the main       
+  crawler logic and callbacks.                                                  
+
+● I'll start by exploring the project directory to understand what's already
+  there.
+
+● Explore(Explore crawler project files)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+● Let me wait for that exploration to complete before planning.
+
+  Read 3 files, listed 2 directories, ran 2 shell commands (ctrl+o to expand)
+
+● The project is small and I now have the full picture. Let me confirm a few
+  design decisions before writing the plan.
+
+● User declined to answer questions
+  ⎿  · How should the code be organized across files? (The Makefile compiles all
+     *.c in my-crawler/, so multiple files work fine.) (Split into 3 modules 
+     (Recommended) / Single crawler.c)
+     · When should edge_fn(from, to) be called? The driver prints every call as 
+     "edge from:to", so this directly shapes the graded output. (Every anchor 
+     occurrence (Recommended) / Only first time each page is discovered / Dedup 
+     per (from,to) pair)
+     · What should I do once the plan is approved? (Implement all 3 parts / 
+     Scaffold only, I'll fill in / Plan only for now)
+
+● Agent "Explore crawler project files" finished · 2m 50s
+
+● Sure — what would you like to clarify before I ask?
+
+  For context, here's what I found so far, in case it sharpens the questions:
+
+  - crawl() in os-crawler-framework/api.h:33 is the only required symbol.
+  Language is C, threading is pthreads, built with -Wall -Werror.
+  - driver.c:96 hard-codes the run: start "root", 4 downloaders, 4 parsers,
+  queue size 10 — far smaller than test3's 1000 pages, so the bounded queue will
+  genuinely block producers.
+  - There is no README or spec anywhere on disk — the api.h comment block is the
+  entire written requirement. If you have the handout from Canvas, pasting the
+  relevant bits would help.
+  - Test data is uniform: links are always <a href="NAME">NAME</a>, embedded
+  mid-word, so parsing must key on the <a href=" / "> delimiters, not
+  whitespace.
+  - Useful correctness oracles I computed: a correct run should emit exactly 7
+  edges on test1, 165 on test2, 12896 on test3 (order nondeterministic). All
+  three corpora have cycles, no broken links, no self-loops, no duplicate
+  (from,to) pairs.
+
+  The three things I was going to ask about were: (1) file layout across your
+  3-way workload split, (2) exact edge_fn call semantics, and (3) whether I
+  implement everything or just scaffold. Tell me what you'd like to dig into or
+  correct.
+
+✻ Brewed for 1m 36s
+
+❯ Keep the crawler.c changes to just be one file. should i share the shared     
+  library and implementation guidelines now or later?                           
+
+● Now, please — before I write the plan. Both would change the design directly:
+
+  - Implementation guidelines matter most. The repo has no spec on disk; api.h's
+  comment block is all I have. The guidelines likely pin down things I'd
+  otherwise have to guess at — most importantly the exact edge_fn semantics
+  (every anchor occurrence vs. only newly-discovered pages), whether the
+  page/content queue is also supposed to be bounded, and whether there are
+  constraints on which synchronization primitives you're expected to use.
+  - The shared library — if you mean a reference libcrawler.so from the
+  instructor, that's valuable as an oracle: I can diff its output against ours
+  on test1/test2/test3 to settle the edge_fn question empirically instead of
+  guessing. (The libcrawler.so currently in my-crawler/ is a 0-byte placeholder,
+  so it isn't that.)
+
+  Noted on the single file: everything goes in my-crawler/crawler.c.
+
+  One heads-up that the guidelines may or may not address — the Makefile's
+  library rule lists *.h as a prerequisite:
+
+  libcrawler.so: *.c *.h ../os-crawler-framework/api.h
+
+  With a single crawler.c and no header in the directory, that glob doesn't
+  expand and make will likely fail with No rule to make target '*.h'. Easiest
+  fixes are a one-line crawler.h or dropping *.h from that rule — tell me which
+  you'd prefer, or whether the guidelines already say.
+
+✻ Baked for 16s
+
+❯ Library Specifications and Implementation Guidelines are described in detail  
+  in requirements.md                                                            
+
+  Read 1 file (ctrl+o to expand)
+
+● Now I have the real spec. Two things it settles decisively:
+
+  - edge_fn — "notify the program that the library encountered a link on the
+  from page to the to page" → called once per anchor occurrence, including
+  back-edges to already-visited pages.
+  - Clean thread-pool shutdown is explicitly not required — but termination
+  detection still is (crawl() must return once the graph is fully visited).
+
+  Let me have a planning agent stress-test the concurrency design before I
+  commit it to the plan file.
+
+● Plan(Stress-test crawler concurrency design)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+● While that runs, let me draft the plan file.
+● Updated plan
+  ⎿  /plan to preview
+
+● Plan drafted. One real decision I can't make for you:
+
+● User answered Claude's questions:
+  ⎿  · The provided Makefile rule is `libcrawler.so: *.c *.h 
+     ../os-crawler-framework/api.h`. With a single `crawler.c` and no header in 
+     the directory, the `*.h` glob won't expand and make should fail with `No 
+     rule to make target '*.h'`. How do you want that handled? → Add a minimal 
+     crawler.h (Recommended)
+
+● Updated plan
+  ⎿  /plan to preview
+
+● Plan file updated with the crawler.h decision. Waiting on the concurrency
+  review agent before I finalize — it's stress-testing the termination-detection
+  and deadlock arguments, which are the parts most likely to have a subtle
+  flaw. I'll fold its findings in and then hand you the plan.
+
+✻ Cogitated for 2m 55s
+
+● Agent "Stress-test crawler concurrency design" finished · 8m 25s
+
+● The review found the core design sound but surfaced five concrete bugs. It
+  also confirmed empirically that make fails today (No rule to make target 
+  '*.h'), so crawler.h is mandatory — your choice was the right one. Let me
+  finalize the plan.
+
+● Updated plan
+  ⎿  /plan to preview
+  ⎿  User rejected Claude's plan:
+     ╭─────────────────────────────────────────────────────────────────────────╮
+     │ Multi-threaded Web Crawler (libcrawler.so)                              │
+     │                                                                         │
+     │ Context                                                                 │
+     │                                                                         │
+     │ my-crawler/crawler.c is empty. The assignment (requirements.md) is to   │
+     │ implement one exported                                                  │
+     │ function, crawl(), in a pthreads shared library that crawls a page      │
+     │ graph using two cooperating                                             │
+     │ thread pools:                                                           │
+     │                                                                         │
+     │ - Downloaders pop URLs off a bounded links queue and call fetch_fn()    │
+     │ for page content.                                                       │
+     │ - Parsers scan content for <a href="...">, report each via edge_fn(),   │
+     │ and push newly                                                          │
+     │ discovered URLs back onto the links queue.                              │
+     │                                                                         │
+     │ The pools feed each other, which is the actual difficulty: a cyclic     │
+     │ producer/consumer                                                       │
+     │ relationship over a bounded buffer. A naive design deadlocks, and "the  │
+     │ queue is empty" is not a                                                │
+     │ valid stopping condition — a parser may be about to produce more links. │
+     │ The driver runs 4                                                       │
+     │ downloaders, 4 parsers, work_queue_size = 10 against a 1000-page        │
+     │ corpus, so producers block                                              │
+     │ constantly; the synchronization is genuinely exercised.                 │
+     │                                                                         │
+     │ Outcome: make libcrawler.so builds clean under -Wall -Werror, and       │
+     │ LD_LIBRARY_PATH=. ./crawl <testdir> prints the full edge list and       │
+     │ terminates.                                                             │
+     │                                                                         │
+     │ Constraints                                                             │
+     │                                                                         │
+     │ - All logic in one file, my-crawler/crawler.c; only crawl() exported,   │
+     │ everything else static.                                                 │
+     │ - C + POSIX pthreads, built -fpic -Wall -Werror -pthread -shared. Zero  │
+     │ warnings tolerated.                                                     │
+     │ - api.h is not on the include path — #include                           │
+     │ "../os-crawler-framework/api.h".                                        │
+     │ - Clean pool exit is not required by the spec, but crawl() returning    │
+     │ is.                                                                     │
+     │ - A hash function may be copied from online only with a source-URL      │
+     │ comment.                                                                │
+     │                                                                         │
+     │ Settled semantics                                                       │
+     │                                                                         │
+     │ - edge_fn(from, to) = "encountered a link on from to to" → fire once    │
+     │ per <a href>                                                            │
+     │ occurrence, unconditionally, before and independent of the visited      │
+     │ check. Visited-filtering                                                │
+     │ gates queueing only, never edge reporting. (Gating edges on the visited │
+     │ check yields 999                                                        │
+     │ instead of 12896 on test3.)                                             │
+     │ - Only the href attribute is a link. Also matching the >NAME</a> anchor │
+     │ text double-counts to 25792.                                            │
+     │ - fetch_fn() returns a malloc'd buffer we must free(), or NULL for a    │
+     │ broken link.                                                            │
+     │ - crawl() returns 0 / -1.                                               │
+     │                                                                         │
+     │ Design                                                                  │
+     │                                                                         │
+     │ One crawler_ctx, a local in crawl(), passed by pointer to every thread. │
+     │ No file-static state,                                                   │
+     │ so the library stays reentrant.                                         │
+     │                                                                         │
+     │ 1. Links queue — bounded                                                │
+     │                                                                         │
+     │ Circular buffer of char *, capacity work_queue_size. Condvars           │
+     │ not_empty, not_full.                                                    │
+     │ Producers: parsers + the seed. Consumers: downloaders.                  │
+     │                                                                         │
+     │ 2. Page queue — unbounded                                               │
+     │                                                                         │
+     │ Linked list of {char *url; char *body;}. Condvar not_empty. Producers:  │
+     │ downloaders.                                                            │
+     │ Consumers: parsers.                                                     │
+     │                                                                         │
+     │ This is the load-bearing decision. With both queues bounded, parsers    │
+     │ blocked on a full links                                                 │
+     │ queue and downloaders blocked on a full page queue deadlock cyclically. │
+     │ An unbounded page queue                                                 │
+     │ means downloaders never block on a push, so they always drain the links │
+     │ queue, so a parser blocked                                              │
+     │ in link_push is always released. Proof sketch to put in a comment:      │
+     │                                                                         │
+     │ ▎ Suppose all threads block forever. If any parser is in link_push, the │
+     │ ▎ links queue is full;                                                  │
+     │ ▎ capacity ≥ 1, so full ⟹ non-empty, so no downloader can be waiting in │
+     │ ▎ link_pop, and                                                         │
+     │ ▎ page_push never blocks — so some downloader must pop, freeing a slot. │
+     │ ▎ Contradiction.                                                        │
+     │ ▎ Otherwise every parser is in page_pop and every downloader in         │
+     │ ▎ link_pop with both queues                                             │
+     │ ▎ empty and no item in hand ⟹ pending == 0 ⟹ legitimate termination.    │
+     │                                                                         │
+     │ The proof needs work_queue_size >= 1; at capacity 0, full and empty are │
+     │ both true and the first                                                 │
+     │ push deadlocks. The argument validation is load-bearing, not cosmetic — │
+     │ comment it as such.                                                     │
+     │                                                                         │
+     │ Not truly unbounded in practice: visited guarantees each URL is         │
+     │ enqueued at most once, so the                                           │
+     │ page queue holds at most |reachable pages|. test3's entire corpus is    │
+     │ 6.0 MB.                                                                 │
+     │                                                                         │
+     │ 3. Visited set — hash set, chaining                                     │
+     │                                                                         │
+     │ Fixed 1024 buckets (1000 entries → chains of ~1; no resizing). djb2     │
+     │ accumulated in                                                          │
+     │ unsigned long over unsigned char, with the source URL cited in a        │
+     │ comment per spec.                                                       │
+     │ Accumulating in int is signed-overflow UB and can yield a negative      │
+     │ bucket index.                                                           │
+     │ Avoid fletcher32 — it wants uint16_t*, so it type-puns char* and        │
+     │ over-reads odd-length strings.                                          │
+     │                                                                         │
+     │ Two hard rules:                                                         │
+     │ - visited_insert() locks, tests-and-inserts, unlocks, and returns a     │
+     │ bool. Check-then-add as                                                 │
+     │ separate calls is a race causing duplicate downloads.                   │
+     │ - It strdups its own key. If it stores the caller's pointer, that       │
+     │ pointer is later freed by                                               │
+     │ whichever parser handles that page, leaving ~1000 dangling keys that    │
+     │ the next strcmp reads.                                                  │
+     │                                                                         │
+     │ 4. Termination detection — outstanding-work counter                     │
+     │                                                                         │
+     │ long pending, folded into the links-queue mutex along with condvar      │
+     │ all_done (3 mutexes                                                     │
+     │ total: links, pages, edge). pending counts items existing anywhere —    │
+     │ queued links + queued                                                   │
+     │ pages + items in a worker's hands. Every transition conserves it:       │
+     │                                                                         │
+     │ ┌────────────────────────────────────┬───────────────────────────────── │
+     │ ───┐                                                                    │
+     │ │             Transition             │              pending             │
+     │   │                                                                     │
+     │ ├────────────────────────────────────┼───────────────────────────────── │
+     │ ───┤                                                                    │
+     │ │ seed, before pthread_create        │ 0 → 1                            │
+     │   │                                                                     │
+     │ ├────────────────────────────────────┼───────────────────────────────── │
+     │ ───┤                                                                    │
+     │ │ link_pop                           │ unchanged (queue → hand)         │
+     │   │                                                                     │
+     │ ├────────────────────────────────────┼───────────────────────────────── │
+     │ ───┤                                                                    │
+     │ │ fetch returns NULL                 │ −1                               │
+     │   │                                                                     │
+     │ ├────────────────────────────────────┼───────────────────────────────── │
+     │ ───┤                                                                    │
+     │ │ page_push                          │ unchanged, deliberately (hand →  │
+     │   │                                                                     │
+     │ │                                    │ page queue)                      │
+     │   │                                                                     │
+     │ ├────────────────────────────────────┼───────────────────────────────── │
+     │ ───┤                                                                    │
+     │ │ page_pop                           │ unchanged                        │
+     │   │                                                                     │
+     │ ├────────────────────────────────────┼───────────────────────────────── │
+     │ ───┤                                                                    │
+     │ │ parser finds a new target          │ +1                               │
+     │   │                                                                     │
+     │ ├────────────────────────────────────┼───────────────────────────────── │
+     │ ───┤                                                                    │
+     │ │ parser finds an already-visited    │ unchanged (edge still emitted)   │
+     │   │                                                                     │
+     │ │ target                             │                                  │
+     │   │                                                                     │
+     │ ├────────────────────────────────────┼───────────────────────────────── │
+     │ ───┤                                                                    │
+     │ │ parser finishes a page (incl.      │ −1                               │
+     │   │                                                                     │
+     │ │ zero-outlink)                      │                                  │
+     │   │                                                                     │
+     │ └────────────────────────────────────┴───────────────────────────────── │
+     │ ───┘                                                                    │
+     │                                                                         │
+     │ So pending == 0 ⟺ both queues empty and no hand holds anything — and it │
+     │ is an absorbing                                                         │
+     │ state, because every +1 is performed by a thread that is itself holding │
+     │ a counted item. Main                                                    │
+     │ can therefore shut down on observing 0 with no re-check.                │
+     │                                                                         │
+     │ Folding the counter into the links mutex makes pending_inc + link_push  │
+     │ a single critical                                                       │
+     │ section, so the key invariant holds by construction rather than by      │
+     │ discipline:                                                             │
+     │                                                                         │
+     │ lock(Lq);                                                               │
+     │   pending++;                                                            │
+     │   while (full && !stop) wait(not_full, Lq);                             │
+     │   if (stop) { pending--; unlock(Lq); free(s); return; }                 │
+     │   ring[tail] = s; ...; signal(not_empty);                               │
+     │ unlock(Lq);                                                             │
+     │                                                                         │
+     │ cond_wait releases the mutex, so downloaders still drain. A parser      │
+     │ blocked here has already                                                │
+     │ counted its child and not yet discounted its parent, so pending >= 2    │
+     │ and main cannot see 0.                                                  │
+     │                                                                         │
+     │ 5. Worker loops                                                         │
+     │                                                                         │
+     │ Downloader: url = link_pop() → body = fetch_fn(url) → if NULL,          │
+     │ free(url) +                                                             │
+     │ pending_dec(); else page_push(url, body) and touch neither pointer      │
+     │ again (a defensive                                                      │
+     │ free after the push is a double free — null the locals).                │
+     │                                                                         │
+     │ Parser: page = page_pop() → scan with strstr → per target:              │
+     │ edge_fn(page.url, target) under                                         │
+     │ the edge mutex, then if (visited_insert(target)) { pending_inc();       │
+     │ link_push(strdup(target)); } →                                          │
+     │ after the loop free(body); free(url); pending_dec().                    │
+     │                                                                         │
+     │ That final pending_dec() must be last — comment it. Decrementing the    │
+     │ parent before the pushes                                                │
+     │ drain, or pushing before incrementing, breaks both the premature-zero   │
+     │ and the no-blocked-pusher                                               │
+     │ invariants at once.                                                     │
+     │                                                                         │
+     │ 6. crawl()                                                              │
+     │                                                                         │
+     │ Validate (NULL start_url/fetch_fn, non-positive workers or queue size → │
+     │ -1). Init, seed                                                         │
+     │ visited + links queue with pending = 1 before spawning, spawn both      │
+     │ pools, then:                                                            │
+     │                                                                         │
+     │ lock(Lq);                                                               │
+     │ while (pending != 0) pthread_cond_wait(&all_done, &Lq);   /* while, not │
+     │ if */                                                                   │
+     │ unlock(Lq);                                                             │
+     │                                                                         │
+     │ Teardown order is the whole ballgame:                                   │
+     │                                                                         │
+     │ 1. observe pending == 0                                                 │
+     │ 2. per queue: lock it, set its stop flag, broadcast its condvars,       │
+     │ unlock                                                                  │
+     │ 3. pthread_join all threads                                             │
+     │ 4. only now free the ring, every visited key/node/bucket array, and     │
+     │ destroy mutexes/condvars                                                │
+     │ 5. return 0                                                             │
+     │                                                                         │
+     │ Step 4 above step 3 is a use-after-free, and destroying a mutex with a  │
+     │ waiter is undefined.                                                    │
+     │                                                                         │
+     │ Bugs the design review caught — fix these by construction               │
+     │                                                                         │
+     │ 1. Stop flag set outside the queue mutex → lost wakeup → pthread_join   │
+     │ hangs forever. A worker                                                 │
+     │ can evaluate its predicate, then main sets the flag and broadcasts      │
+     │ before the worker actually                                              │
+     │ enters cond_wait. The flag must live inside each queue struct, be       │
+     │ written and read under                                                  │
+     │ that queue's mutex, and use broadcast (4 downloaders may be parked).    │
+     │ volatile does not fix                                                   │
+     │ this — the race is on wait/flag ordering, not visibility. Don't name it │
+     │ shutdown; that collides                                                 │
+     │ with POSIX shutdown(2). Use stop.                                       │
+     │ 2. Main must use a while predicate loop. On a small graph pending can   │
+     │ reach 0 before main                                                     │
+     │ finishes pthread_create; a broadcast with no waiter is a no-op and      │
+     │ crawl() hangs forever.                                                  │
+     │ 3. visited_insert must own its key via its own strdup (see §3) —        │
+     │ otherwise use-after-free.                                               │
+     │ 4. Allocation failure must pending_dec(). If strdup/malloc returns NULL │
+     │ after the                                                               │
+     │ increment, the item evaporates but the count doesn't, and crawl() never │
+     │ returns. Three sites;                                                   │
+     │ check each and drop the item. A hang is far worse than a dropped edge.  │
+     │ 5. Never hold one lock while acquiring another. No two locks are ever   │
+     │ held simultaneously, which                                              │
+     │ makes a lock-order cycle impossible by construction — enforce it as a   │
+     │ rule: no mutex is held                                                  │
+     │ across fetch_fn, edge_fn, link_push, page_push, pending_*, or any       │
+     │ malloc. The                                                             │
+     │ tempting refactor that holds the visited lock across the push           │
+     │ serializes every parser behind one                                      │
+     │ blocked parser; fetching while holding the links mutex deadlocks        │
+     │ outright.                                                               │
+     │                                                                         │
+     │ Also: strchr for the closing quote can return NULL on truncated input — │
+     │ check before                                                            │
+     │ dereferencing. Advance the scan pointer past the close quote (past p    │
+     │ alone rescans; by 0 loops                                               │
+     │ forever). Extract with malloc(len+1) + memcpy + explicit NUL, not       │
+     │ strncpy (trips                                                          │
+     │ -Wstringop-truncation, which is in -Wall) and not by writing '\0' into  │
+     │ the body. Handle                                                        │
+     │ <a href=""> (zero-length target). No strtok — hidden static state, not  │
+     │ thread-safe; the spec                                                   │
+     │ warns about exactly this. If fetch_fn(start_url) fails, return 0 (empty │
+     │ reachable graph), and say                                               │
+     │ so in a comment rather than leaving it accidental.                      │
+     │                                                                         │
+     │ Partial-spawn unwind: if pthread_create fails partway, reuse the        │
+     │ shutdown path — set stop,                                               │
+     │ broadcast, join what was created, tear down, return -1.                 │
+     │                                                                         │
+     │ Files                                                                   │
+     │                                                                         │
+     │ - my-crawler/crawler.c — all logic (new).                               │
+     │ - my-crawler/crawler.h — includes api.h, context struct, static         │
+     │ prototypes (new).                                                       │
+     │ - my-crawler/Makefile — untouched.                                      │
+     │                                                                         │
+     │ make libcrawler.so fails today, verified: No rule to make target '*.h'. │
+     │ The rule lists *.h                                                      │
+     │ as a prerequisite and the glob has no match, so a header is mandatory,  │
+     │ not optional. Adding                                                    │
+     │ crawler.h satisfies it while leaving the instructor's Makefile          │
+     │ byte-identical.                                                         │
+     │                                                                         │
+     │ Toolchain hazards (gcc 15.2, C23 by default — no -std is set)           │
+     │                                                                         │
+     │ - bool/true/false/static_assert are keywords; typedef enum {false,true} │
+     │ bool; fails.                                                            │
+     │ - Implicit function declarations are a hard error — a missing           │
+     │ <string.h>/<stdlib.h> is fatal.                                         │
+     │ - Do not add -std=c11: strdup would disappear from <string.h> and       │
+     │ become an error.                                                        │
+     │ - pthread_create's start routine must be exactly void *(*)(void *) —    │
+     │ anything else is an error, not a warning.                               │
+     │ - -Wunused-variable is in -Wall, so a leftover debug variable breaks    │
+     │ the build.                                                              │
+     │                                                                         │
+     │ Verification                                                            │
+     │                                                                         │
+     │ Edge-count oracles (order nondeterministic, count is not). test2 is 165 │
+     │ not 166 because page                                                    │
+     │ ug2ann1h is unreachable from root — which confirms we must emit edges   │
+     │ only for pages actually                                                 │
+     │ fetched, never by pre-scanning the directory.                           │
+     │                                                                         │
+     │ ┌────────┬───────┬───────────────┬─────────────────────┐                │
+     │ │ corpus │ pages │   reachable   │ expected edge lines │                │
+     │ ├────────┼───────┼───────────────┼─────────────────────┤                │
+     │ │ test1  │ 4     │ 4             │ 7                   │                │
+     │ ├────────┼───────┼───────────────┼─────────────────────┤                │
+     │ │ test2  │ 100   │ 99 (1 orphan) │ 165                 │                │
+     │ ├────────┼───────┼───────────────┼─────────────────────┤                │
+     │ │ test3  │ 1000  │ 1000          │ 12896               │                │
+     │ └────────┴───────┴───────────────┴─────────────────────┘                │
+     │                                                                         │
+     │ cd my-crawler && make clean && make crawl                               │
+     │ for t in test1 test2 test3; do                                          │
+     │   timeout 60 env LD_LIBRARY_PATH=. ./crawl ../os-crawler-framework/$t | │
+     │ grep -c '^edge '                                                        │
+     │ done                                                                    │
+     │                                                                         │
+     │ - Duplicate check: ./crawl ... test3 | sort | uniq -d must be empty —   │
+     │ no corpus has a                                                         │
+     │ repeated (from,to) pair. This catches double-emission that wc -l alone  │
+     │ would mask if we also                                                   │
+     │ dropped edges.                                                          │
+     │ - Widen the race windows: per the spec's own suggestion, add            │
+     │ usleep(rand() % 2000) to                                                │
+     │ fetch_dir in a scratch copy of the driver. This is the single best way  │
+     │ to surface bugs 1 and 2.                                                │
+     │ - Repeat: run test3 ~100× checking the count each time. Termination     │
+     │ bugs are low-probability per run.                                       │
+     │ - Parameter sweep (spec requires testing beyond the driver defaults):   │
+     │ work_queue_size = 1                                                     │
+     │ (sharpest deadlock test — every parser push blocks), 1 downloader, 1    │
+     │ parser, and 32/32.                                                      │
+     │ - valgrind: --leak-check=full and --tool=helgrind on test1. Helgrind    │
+     │ should be clean because                                                 │
+     │ of the edge mutex; without it, races inside the driver's printf will    │
+     │ bury real findings.                                                     │
+     │ - Broken links: no corpus has one, so stub fetch_fn to return NULL for  │
+     │ a chosen name to                                                        │
+     │ exercise that path.                                                     │
+     │                                                                         │
+     │ Note on the edge mutex: the driver's single printf is already atomic    │
+     │ (POSIX requires stdio to lock                                           │
+     │ the FILE), so it isn't strictly required for this driver. Keep it       │
+     │ anyway — a grader's edge_fn                                             │
+     │ may build a graph instead of printing, and it keeps helgrind output     │
+     │ readable. ~13k uncontended lock                                         │
+     │ pairs cost nothing.                                                     │
+     ╰─────────────────────────────────────────────────────────────────────────╯
+
+● Understood — splitting into modules, and I'll make edits one file at a time so
+  you can review each.
+
+● Updated plan
+  ⎿  /plan to preview
+
+● Updated plan
+  ⎿  /plan to preview
+
+● Updated plan
+  ⎿  /plan to preview
+
+● User approved Claude's plan
+  ⎿  Plan saved to: ~/.claude/plans/the-end-result-of-glowing-kay.md · /plan to 
+     edit
+     Multi-threaded Web Crawler (libcrawler.so)
+
+     Context
+
+     my-crawler/crawler.c is empty. The assignment (requirements.md) is to
+     implement one exported
+     function, crawl(), in a pthreads shared library that crawls a page graph
+     using two cooperating
+     thread pools:
+
+     - Downloaders pop URLs off a bounded links queue and call fetch_fn() for
+     page content.
+     - Parsers scan content for <a href="...">, report each via edge_fn(), and
+     push newly
+     discovered URLs back onto the links queue.
+
+     The pools feed each other, which is the actual difficulty: a cyclic
+     producer/consumer
+     relationship over a bounded buffer. A naive design deadlocks, and "the
+     queue is empty" is not a
+     valid stopping condition — a parser may be about to produce more links. The
+     driver runs 4
+     downloaders, 4 parsers, work_queue_size = 10 against a 1000-page corpus, so
+     producers block
+     constantly; the synchronization is genuinely exercised.
+
+     Outcome: make libcrawler.so builds clean under -Wall -Werror, and
+     LD_LIBRARY_PATH=. ./crawl <testdir> prints the full edge list and
+     terminates.
+
+     Constraints
+
+     - Split across small single-purpose modules so crawler.c stays readable;
+     crawl() is the only
+     exported symbol, everything else static or internal. The Makefile globs *.c
+     *.h, so any number
+     of files in my-crawler/ get compiled into the one .so with no Makefile
+     change.
+     - C + POSIX pthreads, built -fpic -Wall -Werror -pthread -shared. Zero
+     warnings tolerated.
+     - api.h is not on the include path — #include 
+     "../os-crawler-framework/api.h".
+     - Clean pool exit is not required by the spec, but crawl() returning is.
+     - A hash function may be copied from online only with a source-URL comment.
+
+     Settled semantics
+
+     - edge_fn(from, to) = "encountered a link on from to to" → fire once per <a
+     href>
+     occurrence, unconditionally, before and independent of the visited check.
+     Visited-filtering
+     gates queueing only, never edge reporting. (Gating edges on the visited
+     check yields 999
+     instead of 12896 on test3.)
+     - Only the href attribute is a link. Also matching the >NAME</a> anchor
+     text double-counts to 25792.
+     - fetch_fn() returns a malloc'd buffer we must free(), or NULL for a broken
+     link.
+     - crawl() returns 0 / -1.
+
+     Module map
+
+     Mirrors the three-way split of the work. Each .c owns exactly one
+     synchronized structure and
+     exposes an interface that never leaks a held lock to its caller.
+
+     Module: queue.{h,c}
+     Owns: bounded link queue (ring of char*) + the pending counter + all_done;
+     unbounded page queue
+     Key interface: lq_init/push/pop/stop/destroy, lq_pending_inc/dec,
+     lq_wait_done,
+     pq_init/push/pop/stop/destroy
+     ────────────────────────────────────────
+     Module: visited.{h,c}
+     Owns: hash set + hash function
+     Key interface: visited_init, visited_insert → bool, visited_destroy
+     ────────────────────────────────────────
+     Module: pool.{h,c}
+     Owns: thread-pool create/join
+     Key interface: pool_start(&p, n, fn, arg), pool_join(&p)
+     ────────────────────────────────────────
+     Module: parse.{h,c}
+     Owns: link extraction from a page body
+     Key interface: parse_links(body, cb, arg) or a cursor-style next_link()
+     ────────────────────────────────────────
+     Module: crawler.{h,c}
+     Owns: crawler_ctx, crawl(), downloader + parser loops, edge_fn
+     serialization
+     Key interface: crawl() (the only exported symbol)
+
+     Two notes on the boundaries:
+
+     - pending lives in queue.c with the link queue, not in its own module. It
+     is deliberately
+     guarded by the same mutex as the bounded ring — that is what makes "a
+     blocked pusher has already
+     counted its child" true by construction (see §4). Splitting the counter
+     into its own file with its
+     own mutex would re-open the premature-zero bug. The two belong to one
+     synchronized unit, so they
+     ship in one file.
+     - parse.c is pure, no locks, no threads — trivially unit-testable in
+     isolation, which is the main
+     reason to break it out.
+
+     Design
+
+     One crawler_ctx, a local in crawl(), passed by pointer to every thread. No
+     file-static state,
+     so the library stays reentrant.
+
+     1. Links queue — bounded
+
+     Circular buffer of char *, capacity work_queue_size. Condvars not_empty,
+     not_full.
+     Producers: parsers + the seed. Consumers: downloaders.
+
+     2. Page queue — unbounded
+
+     Linked list of {char *url; char *body;}. Condvar not_empty. Producers:
+     downloaders.
+     Consumers: parsers.
+
+     This is the load-bearing decision. With both queues bounded, parsers
+     blocked on a full links
+     queue and downloaders blocked on a full page queue deadlock cyclically. An
+     unbounded page queue
+     means downloaders never block on a push, so they always drain the links
+     queue, so a parser blocked
+     in link_push is always released. Proof sketch to put in a comment:
+
+     ▎ Suppose all threads block forever. If any parser is in link_push, the 
+     ▎ links queue is full;
+     ▎ capacity ≥ 1, so full ⟹ non-empty, so no downloader can be waiting in 
+     ▎ link_pop, and
+     ▎ page_push never blocks — so some downloader must pop, freeing a slot. 
+     ▎ Contradiction.
+     ▎ Otherwise every parser is in page_pop and every downloader in link_pop 
+     ▎ with both queues
+     ▎ empty and no item in hand ⟹ pending == 0 ⟹ legitimate termination.
+
+     The proof needs work_queue_size >= 1; at capacity 0, full and empty are
+     both true and the first
+     push deadlocks. The argument validation is load-bearing, not cosmetic —
+     comment it as such.
+
+     Not truly unbounded in practice: visited guarantees each URL is enqueued at
+     most once, so the
+     page queue holds at most |reachable pages|. test3's entire corpus is 6.0
+     MB.
+
+     3. Visited set — hash set, chaining
+
+     Fixed 1024 buckets (1000 entries → chains of ~1; no resizing). djb2
+     accumulated in
+     unsigned long over unsigned char, with the source URL cited in a comment
+     per spec.
+     Accumulating in int is signed-overflow UB and can yield a negative bucket 
+     index.
+     Avoid fletcher32 — it wants uint16_t*, so it type-puns char* and over-reads
+     odd-length strings.
+
+     Two hard rules:
+     - visited_insert() locks, tests-and-inserts, unlocks, and returns a bool.
+     Check-then-add as
+     separate calls is a race causing duplicate downloads.
+     - It strdups its own key. If it stores the caller's pointer, that pointer
+     is later freed by
+     whichever parser handles that page, leaving ~1000 dangling keys that the
+     next strcmp reads.
+
+     4. Termination detection — outstanding-work counter
+
+     long pending, folded into the links-queue mutex along with condvar all_done
+     (3 mutexes
+     total: links, pages, edge). pending counts items existing anywhere — queued
+     links + queued
+     pages + items in a worker's hands. Every transition conserves it:
+
+     ┌────────────────────────────────────┬────────────────────────────────────┐
+     │             Transition             │              pending               │
+     ├────────────────────────────────────┼────────────────────────────────────┤
+     │ seed, before pthread_create        │ 0 → 1                              │
+     ├────────────────────────────────────┼────────────────────────────────────┤
+     │ link_pop                           │ unchanged (queue → hand)           │
+     ├────────────────────────────────────┼────────────────────────────────────┤
+     │ fetch returns NULL                 │ −1                                 │
+     ├────────────────────────────────────┼────────────────────────────────────┤
+     │ page_push                          │ unchanged, deliberately (hand →    │
+     │                                    │ page queue)                        │
+     ├────────────────────────────────────┼────────────────────────────────────┤
+     │ page_pop                           │ unchanged                          │
+     ├────────────────────────────────────┼────────────────────────────────────┤
+     │ parser finds a new target          │ +1                                 │
+     ├────────────────────────────────────┼────────────────────────────────────┤
+     │ parser finds an already-visited    │ unchanged (edge still emitted)     │
+     │ target                             │                                    │
+     ├────────────────────────────────────┼────────────────────────────────────┤
+     │ parser finishes a page (incl.      │ −1                                 │
+     │ zero-outlink)                      │                                    │
+     └────────────────────────────────────┴────────────────────────────────────┘
+
+     So pending == 0 ⟺ both queues empty and no hand holds anything — and it is
+     an absorbing
+     state, because every +1 is performed by a thread that is itself holding a
+     counted item. Main
+     can therefore shut down on observing 0 with no re-check.
+
+     Folding the counter into the links mutex makes pending_inc + link_push a
+     single critical
+     section, so the key invariant holds by construction rather than by
+     discipline:
+
+     lock(Lq);
+       pending++;
+       while (full && !stop) wait(not_full, Lq);
+       if (stop) { pending--; unlock(Lq); free(s); return; }
+       ring[tail] = s; ...; signal(not_empty);
+     unlock(Lq);
+
+     cond_wait releases the mutex, so downloaders still drain. A parser blocked
+     here has already
+     counted its child and not yet discounted its parent, so pending >= 2 and
+     main cannot see 0.
+
+     5. Worker loops
+
+     Downloader: url = link_pop() → body = fetch_fn(url) → if NULL, free(url) +
+     pending_dec(); else page_push(url, body) and touch neither pointer again (a
+     defensive
+     free after the push is a double free — null the locals).
+
+     Parser: page = page_pop() → scan with strstr → per target:
+     edge_fn(page.url, target) under
+     the edge mutex, then if (visited_insert(target)) { pending_inc(); 
+     link_push(strdup(target)); } →
+     after the loop free(body); free(url); pending_dec().
+
+     That final pending_dec() must be last — comment it. Decrementing the parent
+     before the pushes
+     drain, or pushing before incrementing, breaks both the premature-zero and
+     the no-blocked-pusher
+     invariants at once.
+
+     6. crawl()
+
+     Validate (NULL start_url/fetch_fn, non-positive workers or queue size →
+     -1). Init, seed
+     visited + links queue with pending = 1 before spawning, spawn both pools,
+     then:
+
+     lock(Lq);
+     while (pending != 0) pthread_cond_wait(&all_done, &Lq);   /* while, not if
+     */
+     unlock(Lq);
+
+     Teardown order is the whole ballgame:
+
+     1. observe pending == 0
+     2. per queue: lock it, set its stop flag, broadcast its condvars, unlock
+     3. pthread_join all threads
+     4. only now free the ring, every visited key/node/bucket array, and destroy
+     mutexes/condvars
+     5. return 0
+
+     Step 4 above step 3 is a use-after-free, and destroying a mutex with a
+     waiter is undefined.
+
+     Bugs the design review caught — fix these by construction
+
+     1. Stop flag set outside the queue mutex → lost wakeup → pthread_join hangs
+     forever. A worker
+     can evaluate its predicate, then main sets the flag and broadcasts before
+     the worker actually
+     enters cond_wait. The flag must live inside each queue struct, be written
+     and read under
+     that queue's mutex, and use broadcast (4 downloaders may be parked).
+     volatile does not fix
+     this — the race is on wait/flag ordering, not visibility. Don't name it
+     shutdown; that collides
+     with POSIX shutdown(2). Use stop.
+     2. Main must use a while predicate loop. On a small graph pending can reach
+     0 before main
+     finishes pthread_create; a broadcast with no waiter is a no-op and crawl()
+     hangs forever.
+     3. visited_insert must own its key via its own strdup (see §3) — otherwise
+     use-after-free.
+     4. Allocation failure must pending_dec(). If strdup/malloc returns NULL
+     after the
+     increment, the item evaporates but the count doesn't, and crawl() never
+     returns. Three sites;
+     check each and drop the item. A hang is far worse than a dropped edge.
+     5. Never hold one lock while acquiring another. No two locks are ever held
+     simultaneously, which
+     makes a lock-order cycle impossible by construction — enforce it as a rule:
+     no mutex is held
+     across fetch_fn, edge_fn, link_push, page_push, pending_*, or any malloc.
+     The
+     tempting refactor that holds the visited lock across the push serializes
+     every parser behind one
+     blocked parser; fetching while holding the links mutex deadlocks outright.
+
+     Also: strchr for the closing quote can return NULL on truncated input —
+     check before
+     dereferencing. Advance the scan pointer past the close quote (past p alone
+     rescans; by 0 loops
+     forever). Extract with malloc(len+1) + memcpy + explicit NUL, not strncpy
+     (trips
+     -Wstringop-truncation, which is in -Wall) and not by writing '\0' into the
+     body. Handle
+     <a href=""> (zero-length target). No strtok — hidden static state, not
+     thread-safe; the spec
+     warns about exactly this. If fetch_fn(start_url) fails, return 0 (empty
+     reachable graph), and say
+     so in a comment rather than leaving it accidental.
+
+     Partial-spawn unwind: if pthread_create fails partway, reuse the shutdown
+     path — set stop,
+     broadcast, join what was created, tear down, return -1.
+
+     Files
+
+     All new, in my-crawler/: queue.h/queue.c, visited.h/visited.c,
+     pool.h/pool.c,
+     parse.h/parse.c, crawler.h/crawler.c. my-crawler/Makefile stays untouched —
+     its
+     libcrawler.so: *.c *.h ... rule picks all of them up automatically.
+
+     Worth knowing: make libcrawler.so fails today, verified — No rule to make 
+     target '*.h',
+     because the rule lists *.h as a prerequisite and the directory has no
+     header for the glob to
+     match. Adding headers fixes this as a side effect, so no Makefile edit is
+     needed. (Had we stayed
+     single-file, a header would have been mandatory anyway just to satisfy that
+     glob.)
+
+     Suggested build order, each independently compilable: parse → visited →
+     queue → pool →
+     crawler.
+
+     Toolchain hazards (gcc 15.2, C23 by default — no -std is set)
+
+     - bool/true/false/static_assert are keywords; typedef enum {false,true} 
+     bool; fails.
+     - Implicit function declarations are a hard error — a missing
+     <string.h>/<stdlib.h> is fatal.
+     - Do not add -std=c11: strdup would disappear from <string.h> and become an
+     error.
+     - pthread_create's start routine must be exactly void *(*)(void *) —
+     anything else is an error, not a warning.
+     - -Wunused-variable is in -Wall, so a leftover debug variable breaks the
+     build.
+
+     Verification
+
+     Edge-count oracles (order nondeterministic, count is not). test2 is 165 not
+     166 because page
+     ug2ann1h is unreachable from root — which confirms we must emit edges only
+     for pages actually
+     fetched, never by pre-scanning the directory.
+
+     ┌────────┬───────┬───────────────┬─────────────────────┐
+     │ corpus │ pages │   reachable   │ expected edge lines │
+     ├────────┼───────┼───────────────┼─────────────────────┤
+     │ test1  │ 4     │ 4             │ 7                   │
+     ├────────┼───────┼───────────────┼─────────────────────┤
+     │ test2  │ 100   │ 99 (1 orphan) │ 165                 │
+     ├────────┼───────┼───────────────┼─────────────────────┤
+     │ test3  │ 1000  │ 1000          │ 12896               │
+     └────────┴───────┴───────────────┴─────────────────────┘
+
+     cd my-crawler && make clean && make crawl
+     for t in test1 test2 test3; do
+       timeout 60 env LD_LIBRARY_PATH=. ./crawl ../os-crawler-framework/$t |
+     grep -c '^edge '
+     done
+
+     - Duplicate check: ./crawl ... test3 | sort | uniq -d must be empty — no
+     corpus has a
+     repeated (from,to) pair. This catches double-emission that wc -l alone
+     would mask if we also
+     dropped edges.
+     - Widen the race windows: per the spec's own suggestion, add usleep(rand() 
+     % 2000) to
+     fetch_dir in a scratch copy of the driver. This is the single best way to
+     surface bugs 1 and 2.
+     - Repeat: run test3 ~100× checking the count each time. Termination bugs
+     are low-probability per run.
+     - Parameter sweep (spec requires testing beyond the driver defaults):
+     work_queue_size = 1
+     (sharpest deadlock test — every parser push blocks), 1 downloader, 1
+     parser, and 32/32.
+     - valgrind: --leak-check=full and --tool=helgrind on test1. Helgrind should
+     be clean because
+     of the edge mutex; without it, races inside the driver's printf will bury
+     real findings.
+     - Broken links: no corpus has one, so stub fetch_fn to return NULL for a
+     chosen name to
+     exercise that path.
+
+     Note on the edge mutex: the driver's single printf is already atomic (POSIX
+     requires stdio to lock
+     the FILE), so it isn't strictly required for this driver. Keep it anyway —
+     a grader's edge_fn
+     may build a graph instead of printing, and it keeps helgrind output
+     readable. ~13k uncontended lock
+     pairs cost nothing.
+
+● Plan approved. Implementing in the order from the plan — parse → visited →
+  queue → pool → crawler. Starting with the pure, lock-free module.
+
+● Write(~/444-fall26/l3-crawler/my-crawler/parse.h)
+  ⎿  User rejected write to ../my-crawler/parse.h
+       1 #ifndef PARSE_H
+       2 #define PARSE_H
+       3 
+       4 /*
+       5  * parse.h - extracting links from a page body.
+       6  *
+       7  * This module is pure: no locks, no threads, no shared state. E
+         very function
+       8  * here is safe to call from any number of threads at once, beca
+         use all state
+       9  * lives in the caller's link_iter.
+      10  *
+     … +31 lines
+
+✻ Baked for 15m 24s
+
+※ recap: Goal is a multithreaded pthreads crawler in my-crawler/crawler.c that terminates correctly. The plan file is drafted and the Makefile header question is settled. Next: fold in the concurrency review agent's findings, then present the plan for approval. (disable recaps in /config)
+
+❯ Before you continue, in phases.md are the 3 phases described in detail on how 
+  I want you to implement them. You have freedom to make any revisions you      
+  want, ie making your additional files. phases.md is a recommendation, not     
+  law.                                                                          
+
+  Read 1 file (ctrl+o to expand)
+● phases.md lines up with the approved plan almost exactly — bounded queue with
+  1 mutex + 2 condvars, unbounded malloc-per-entry queue with no "full" condvar,
+  hash set with a cited source URL, two pools, then crawl(). I'll follow its
+  phase ordering (Phase 1 first) rather than my earlier build order.
+
+  Two deliberate deviations, both backed by requirements.md:
+
+  - Line 19 reads "when a new link is found, call edge_fn." I'm calling edge_fn
+  on every <a href> occurrence, not only newly-discovered ones — requirements.md
+  defines it as "the library encountered a link on the from page to the to
+  page," and the corpora confirm it: test3 has 999 newly-discovered pages but
+  12896 link occurrences. Gating edges on the visited check would under-report
+  by 13×. Say the word if you'd rather match the narrower reading.
+  - Line 21 suggests strtok_r. I'm using strstr/strchr, which requirements.md
+  recommends first and which are pure functions — no saved state to make
+  reentrant at all. Same thread-safety guarantee, less bookkeeping.
+
+  Starting Phase 1.
+
+● Write(~/444-fall26/l3-crawler/my-crawler/queue.h)
+  ⎿  Wrote 142 lines to ../my-crawler/queue.h
+       1 #ifndef QUEUE_H
+       2 #define QUEUE_H
+       3 
+       4 #include <pthread.h>
+       5 
+       7  * queue.h - the two work queues connecting the downloader and p
+         arser pools.
+       8  *
+       9  *   parsers --(link_queue, bounded)--> downloaders
+      10  *   downloaders --(page_queue, unbounded)--> parsers
+     … +183 lines (ctrl+o to expand)
+
+● Write(~/444-fall26/l3-crawler/my-crawler/queue.c)
+  ⎿  Wrote 274 lines to ../my-crawler/queue.c
+       1 #include <stdlib.h>
+       2 
+       4 
+       5 /* -------------------------------------------------------------
+         ----- */
+                */
+       7 /* -------------------------------------------------------------
+         ----- */
+       9 int lq_init(link_queue *q, int cap)
+      10 {
+     … +292 lines (ctrl+o to expand)
+
+● Phase 1 continued — the visited set.
+
+● Write(~/444-fall26/l3-crawler/my-crawler/visited.h)
+  ⎿  Wrote 52 lines to ../my-crawler/visited.h
+       1 #ifndef VISITED_H
+       2 #define VISITED_H
+       3 
+       5 
+       6 /*
+       7  * visited.h - the set of links the crawler has already claimed.
+       8  *
+         A), so without
+      10  * this the crawler would follow them forever. Every URL is admi
+         tted exactly
+     … +56 lines (ctrl+o to expand)
+
+● Write(~/444-fall26/l3-crawler/my-crawler/visited.c)
+  ⎿  Wrote 91 lines to ../my-crawler/visited.c
+       1 #include <stdlib.h>
+       2 #include <string.h>
+       3 
+       4 #include "visited.h"
+       5 
+       7  * djb2 string hash, by Dan Bernstein.
+       8  * Source: http://www.cse.yorku.ca/~oz/hash.html
+       9  *
+      10  * The accumulator is unsigned on purpose. Hashing into a signed
+          int would
+     … +83 lines (ctrl+o to expand)
+
+● Phase 2 — the thread pools.
+
+● Write(~/444-fall26/l3-crawler/my-crawler/pool.h)
+  ⎿  Wrote 36 lines to ../my-crawler/pool.h
+       1 #ifndef POOL_H
+       2 #define POOL_H
+       4 #include <pthread.h>
+       5 
+       6 /*
+         orker loop.
+       8  *
+       9  * Thin on purpose. The crawler needs two of these (downloaders 
+      10  * and they differ only in the function they run and the context
+          they get, so
+     … +37 lines (ctrl+o to expand)
+
+● Write(~/444-fall26/l3-crawler/my-crawler/pool.c)
+  ⎿  Wrote 34 lines to ../my-crawler/pool.c
+       1 #include <stdlib.h>
+       2 
+       3 #include "pool.h"
+       4 
+       5 int pool_start(thread_pool *p, int n, void *(*fn)(void *), void 
+       6 {
+       7     if (!p || n < 1)
+       8         return -1;
+       9 
+      10     p->threads = malloc((size_t)n * sizeof(pthread_t));
+     … +26 lines (ctrl+o to expand)
+
+● Phase 3 — the link parser, then crawl() itself.
+
+● Write(~/444-fall26/l3-crawler/my-crawler/parse.h)
+  ⎿  Wrote 43 lines to ../my-crawler/parse.h
+       1 #ifndef PARSE_H
+       2 #define PARSE_H
+       3 
+       5  * parse.h - pulling <a href="..."> targets out of a page body.
+       6  *
+       7  * This module is pure: no locks, no threads, no shared state. A
+         ll iteration
+         r threads can
+       9  * be in here at once.
+      10  *
+     … +44 lines (ctrl+o to expand)
+
+● Write(~/444-fall26/l3-crawler/my-crawler/parse.c)
+  ⎿  Wrote 54 lines to ../my-crawler/parse.c
+       1 #include <stdlib.h>
+       2 #include <string.h>
+       3 
+       4 #include "parse.h"
+       5 
+         he target. */
+       7 static const char LINK_PREFIX[] = "<a href=\"";
+       8 #define LINK_PREFIX_LEN (sizeof(LINK_PREFIX) - 1)
+       9 
+      10 void link_iter_init(link_iter *it, const char *body)
+     … +51 lines (ctrl+o to expand)
+
+● Update(~/444-fall26/l3-crawler/my-crawler/parse.h)
+  ⎿  Added 3 lines, removed 1 line
+      29  void link_iter_init(link_iter *it, const char *body);
+      30  
+      31  /*
+      32 - * Return the next link target, or NULL when the page holds no 
+         -more.                                                          
+      32 + * Return the next link target, or NULL when the page holds no 
+         +more. (An                                                      
+      33 + * allocation failure also reports NULL, ending iteration early
+         +; the caller                                                   
+      34 + * loses the rest of that page's links but nothing is corrupted
+         +.)                                                             
+      35   *
+      36   * The result is a malloc'd NUL-terminated string and THE CALLE
+          R OWNS IT --
+      37   * either free() it or hand it to something that takes ownershi
+          p.
+
+● Write(~/444-fall26/l3-crawler/my-crawler/crawler.h)
+  ⎿  Wrote 34 lines to ../my-crawler/crawler.h
+       1 #ifndef CRAWLER_H
+       2 #define CRAWLER_H
+       3 
+       4 #include <pthread.h>
+       5 
+         ath, hence the relative path */
+       7 #include "queue.h"
+       8 #include "visited.h"
+       9 
+      10 /*
+     … +32 lines (ctrl+o to expand)
+
+● Write(~/444-fall26/l3-crawler/my-crawler/crawler.c)
+  ⎿  Wrote 194 lines to ../my-crawler/crawler.c
+       1 #include <stdlib.h>
+       2 #include <string.h>
+       4 #include "crawler.h"
+       5 #include "parse.h"
+       6 #include "pool.h"
+       8 /* -------------------------------------------------------------
+         ----- */
+       9 /* Downloader pool                                              
+      10 /* -------------------------------------------------------------
+         ----- */
+     … +224 lines (ctrl+o to expand)
+
+● Now let's build and run the oracles.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Clean build, zero warnings. Now the edge-count oracles.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● All three oracles match exactly. Now the correctness checks that a bare count
+  would hide.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+❯ allow all bash commands                                                       
+● No duplicates, and the distinct-from counts are exactly right (test3's 1000th
+  page has zero outlinks, so it never appears as a source). Now the repeat loop
+  — termination bugs are low-probability per run.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● 100/100 clean. Now the parameter sweep the spec asks for, plus timing jitter
+  to widen the race windows.
+
+  Made 1 scratchpad edit +86, ran 3 shell commands (ctrl+o to expand)
+
+● Zero leaks, zero errors. Now race detection.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Helgrind reports zero races. Let me exercise the error paths the corpora never
+  hit — invalid arguments, broken links, and a broken seed.
+
+  Made 1 scratchpad edit +84, ran 1 shell command (ctrl+o to expand)
+
+● The relative include needs the framework on the search path.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● All edge cases pass, including 20 back-to-back crawls (no leftover global
+  state). Let me verify the error paths are also leak-free and race-free.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Let me record the working preference you corrected me on.
+
+  Listed 1 directory, wrote 2 memories (ctrl+o to expand)
+
+● Done. The crawler works and passes everything I could throw at it.
+
+  Files written (all in my-crawler/)
+
+  ┌───────────────┬──────────────────────────────────────────────────────────┐
+  │     File      │                           Owns                           │
+  ├───────────────┼──────────────────────────────────────────────────────────┤
+  │               │ bounded link queue (ring, 1 mutex + 2 condvars) + the    │
+  │ queue.{h,c}   │ outstanding-work counter; unbounded page queue           │
+  │               │ (malloc-per-node, no "full" state)                       │
+  ├───────────────┼──────────────────────────────────────────────────────────┤
+  │ visited.{h,c} │ hash set, djb2 with the source URL cited in a comment    │
+  ├───────────────┼──────────────────────────────────────────────────────────┤
+  │ pool.{h,c}    │ thread-pool start/join                                   │
+  ├───────────────┼──────────────────────────────────────────────────────────┤
+  │ parse.{h,c}   │ <a href> extraction — pure, no locks, no static state    │
+  ├───────────────┼──────────────────────────────────────────────────────────┤
+  │ crawler.{h,c} │ crawl(), both worker loops, edge_fn serialization        │
+  └───────────────┴──────────────────────────────────────────────────────────┘
+
+  os-crawler-framework/ and the Makefile are both untouched — git status on the
+  framework is clean, and make libcrawler.so builds from scratch with zero
+  warnings under -Wall -Werror.
+
+  Results
+
+  - Edge oracles: 7 / 165 / 12896 — exact matches on test1/test2/test3.
+  - No duplicate (from,to) pairs; distinct source pages 4 / 99 / 999 (test3's
+  one zero-outlink page correctly never appears as a source).
+  - 100 consecutive test3 runs — 0 mismatches, 0 hangs.
+  - Parameter sweep — 12896 every time across 7 configs including qsize=1 (the
+  sharpest deadlock case), 1 downloader, 1 parser, and 32/32.
+  - Fetch-delay stress (the jitter requirements.md suggests) — 190 runs across 5
+  configs, all correct. This is what would have exposed a lost wakeup.
+  - valgrind memcheck — 0 errors, 0 bytes in use at exit on test1, test2, and
+  the edge-case suite.
+  - helgrind — 0 races on both.
+  - Edge cases — all 7 invalid-argument forms return −1; broken links, an
+  unreachable seed, and truncated <a href=" markup all terminate cleanly; 20
+  back-to-back crawls leave no residual state.
+
+  Two judgment calls worth your review
+
+  1. edge_fn fires on every <a href> occurrence, not only on newly-discovered
+  pages. phases.md:19 says "when a new link is found," but requirements.md
+  defines it as "encountered a link on the from page to the to page," and the
+  arithmetic is decisive — the narrower reading gives 999 edges on test3 instead
+  of 12896. If your grader expects the spanning-tree version, moving the
+  edge_fn call inside the visited_insert() == 1 branch in crawler.c:78 is a
+  one-line change.
+  2. strstr/strchr instead of strtok_r (phases.md:21). Both are thread-safe;
+  strstr is what requirements.md recommends first, and it needs no reentrancy
+  bookkeeping because it keeps no state at all.
+
+  The design rationale — why the page queue must be unbounded, why the stop flag
+  is set under the queue mutex, why lq_work_done() must be the parser's last
+  action — is in comments at each site, since those are the parts that break
+  silently if someone later "simplifies" them.
+
+✻ Cogitated for 7m 7s
+
+※ recap: The multi-threaded crawler is built and fully tested: edge counts match on all three corpora, 100 repeat runs pass, and valgrind and helgrind are clean. Next, decide whether edge_fn should fire on every link or only newly-discovered ones. (disable recaps in /config)
+
+❯ Housekeeping steps:                                                           
+  - Verify that the code and Makefile successfully build a shared library named 
+  libcrawler.so.                                                                
+  - Run the provided driver.c test cases to ensure the crawler properly         
+  explores the mock web graph.                                                  
+  - Modify driver.c to alter thread counts, test different parameters, and      
+  introduce delays to thoroughly verify the concurrent operations.              
+
+● Items 1 and 2 I covered during implementation, but let me re-run them cleanly
+  for the record, then do item 3 properly — modifying the real driver.c rather
+  than the scratch copy I used earlier.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● The library builds and exports crawl — but it's also exporting every internal
+  module symbol. The approved plan said crawl() should be the only exported
+  symbol, and splitting into modules broke that (cross-module functions can't be
+  static). Worth fixing: a host program defining its own lq_init or pool_start
+  could collide with ours at load time. Hiding them needs no Makefile change.
+
+● Update(~/444-fall26/l3-crawler/my-crawler/queue.h)
+  ⎿  Added 7 lines
+      17   * parser blocked in lq_submit() is always eventually released.
+      18   */
+      19  
+      20 +/*                                                             
+      21 + * Everything here is internal to the library. Hiding it keeps 
+         +crawl() the                                                    
+      22 + * only symbol libcrawler.so exports, so these names cannot col
+         +lide with                                                      
+      23 + * anything in the program that links against us.              
+      24 + */                                                            
+      25 +#pragma GCC visibility push(hidden)                            
+      26 +                                                               
+      27  /* ------------------------------------------------------------
+          ------ */
+      28  /* Bounded link queue (parsers -> downloaders)                 
+                  */
+      29  /* ------------------------------------------------------------
+          ------ */
+
+● Update(~/444-fall26/l3-crawler/my-crawler/queue.h)
+  ⎿  Added 2 lines
+      146  /* Wake every blocked parser so it can exit. Safe to call more
+            than once. */
+      147  void pq_stop(page_queue *q);
+      148  
+      149 +#pragma GCC visibility pop                                    
+      150 +                                                              
+      151  #endif /* QUEUE_H */
+
+● Update(~/444-fall26/l3-crawler/my-crawler/visited.h)
+  ⎿  Added 3 lines
+      12   * queueing it.
+      13   */
+      14  
+      15 +/* Internal to the library; see the note in queue.h. */        
+      16 +#pragma GCC visibility push(hidden)                            
+      17 +                                                               
+      18  /* Fixed bucket count. The largest corpus has 1000 pages, so ch
+          ains average
+      19   * about one node and there is no reason to grow the table at r
+          untime. */
+      20  #define VISITED_BUCKETS 1024
+
+● Update(~/444-fall26/l3-crawler/my-crawler/visited.h)  ⎿  Added 2 lines
+      52   */
+      53  int visited_insert(visited_set *v, const char *url);
+      54  
+      55 +#pragma GCC visibility pop                                     
+      56 +                                                               
+      57  #endif /* VISITED_H */
+
+● Update(~/444-fall26/l3-crawler/my-crawler/pool.h)
+  ⎿  Added 3 lines
+      10   * and they differ only in the function they run and the contex
+          t they get, so
+      11   * the only thing worth factoring out is "spawn N of these, the
+          n join them."
+      12   */
+      13 +/* Internal to the library; see the note in queue.h. */        
+      14 +#pragma GCC visibility push(hidden)                            
+      15 +                                                               
+      16  typedef struct {
+      17      pthread_t *threads;
+      18      int count;                 /* threads actually created, hen
+          ce joinable */
+
+● Update(~/444-fall26/l3-crawler/my-crawler/pool.h)
+  ⎿  Added 2 lines
+      36   */
+      37  void pool_join(thread_pool *p);
+      38  
+      39 +#pragma GCC visibility pop                                     
+      40 +                                                               
+      41  #endif /* POOL_H */
+
+● Update(~/444-fall26/l3-crawler/my-crawler/parse.h)
+  ⎿  Added 3 lines
+      15   * is nothing here it would make simpler.)
+      16   */
+      17  
+      18 +/* Internal to the library; see the note in queue.h. */        
+      19 +#pragma GCC visibility push(hidden)                            
+      20 +                                                               
+      21  /* Cursor over the links in a page body. Treat the field as opa
+          que. */
+      22  typedef struct {
+      23      const char *cursor;
+
+● Update(~/444-fall26/l3-crawler/my-crawler/parse.h)
+  ⎿  Added 2 lines
+      45   */
+      46  char *link_iter_next(link_iter *it);
+      47  
+      48 +#pragma GCC visibility pop                                     
+      49 +                                                               
+      50  #endif /* PARSE_H */
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● crawl is now the only exported symbol. Item 2 — the provided driver,
+  unmodified, against all three corpora:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● The no-args case is a nice accident: driver.c defaults to a relative test3
+  that doesn't exist from my-crawler/, so the seed fetch fails — and the crawler
+  still returns cleanly with 0 edges instead of hanging.
+
+  Now item 3 — modifying the real driver.c. I'll keep it fully backward
+  compatible so make run-crawl and bare ./crawl behave exactly as before.
+
+  Read 1 file (ctrl+o to expand)
+
+● Update(driver.c)
+  ⎿  Added 13 lines
+      72  const char* DEFAULT_TEST_DIR = "test3";
+      73  const char* test_dir = NULL;
+      74  
+      75 +// Upper bound, in microseconds, on the artificial delay fetch_
+         +dir() sleeps                                                   
+      76 +// before returning a page. 0 disables it. A slow, variable fet
+         +ch is what a                                                   
+      77 +// real network looks like, and it widens the timing windows wh
+         +ere a                                                          
+      78 +// concurrency bug in the library would show up.               
+      79 +int fetch_delay_us = 0;                                        
+      80 +                                                               
+      81  char* fetch_dir(const char* link) {
+      82 +    if (fetch_delay_us > 0) {                                  
+      83 +        // rand_r() takes the caller's seed, so it is safe to c
+         +all from                                                       
+      84 +        // several downloader threads at once; plain rand() is 
+         +not. Seeding                                                   
+      85 +        // from the link address gives each page a different, s
+         +table delay.                                                   
+      86 +        unsigned int seed = (unsigned int)(uintptr_t)link;     
+      87 +        usleep((useconds_t)(rand_r(&seed) % fetch_delay_us));  
+      88 +    }                                                          
+      89      return fetch(test_dir, link);
+      90  }
+      91  
+
+● Update(driver.c)
+  ⎿  Added 30 lines, removed 6 lines
+       97  }
+       98  
+       99  
+      100 +// usage: crawl [dir] [download_workers] [parse_workers] [queu
+          +e_size] [delay_us]                                            
+      101 +//                                                            
+      102 +// Every argument is optional and the defaults are the origina
+          +l ones, so                                                    
+      103 +// running with no arguments (or just a directory) behaves exa
+          +ctly as before.                                               
+      104  int main(int argc, char** argv) {
+      101 -    const char* rootname = "root";                            
+      105 +    const char* rootname = "root";                            
+      106  
+      107 +    int download_workers = 4;                                 
+      108 +    int parse_workers = 4;                                    
+      109 +    int queue_size = 10;                                      
+      110 +                                                              
+      111      if (argc >= 2 ) {
+      112          test_dir = argv[1];
+      113      } else {
+      114          test_dir = DEFAULT_TEST_DIR;
+      115      }
+      108 -                                                              
+      109 -    crawl(                                                    
+      116 +                                                              
+      117 +    if (argc >= 3) download_workers = atoi(argv[2]);          
+      118 +    if (argc >= 4) parse_workers    = atoi(argv[3]);          
+      119 +    if (argc >= 5) queue_size       = atoi(argv[4]);          
+      120 +    if (argc >= 6) fetch_delay_us   = atoi(argv[5]);          
+      121 +                                                              
+      122 +    // Configuration goes to stderr so that stdout stays a cle
+          +an edge list                                                  
+      123 +    // and can still be piped into sort/grep/wc.              
+      124 +    fprintf(stderr,                                           
+      125 +            "crawl: dir=%s downloaders=%d parsers=%d queue_siz
+          +e=%d delay<=%dus\n",                                          
+      126 +            test_dir, download_workers, parse_workers, queue_s
+          +ize, fetch_delay_us);                                         
+      127 +                                                              
+      128 +    int rc = crawl(                                           
+      129          rootname,          // start_url
+      111 -        4,                 // download_workers                
+      112 -        4,                 // parse_workers                   
+      113 -        10,                // queue_size                      
+      130 +        download_workers,  // download_workers                
+      131 +        parse_workers,     // parse_workers                   
+      132 +        queue_size,        // queue_size                      
+      133          fetch_dir,        // fetch_fn
+      134          report_edge       // edge_fn
+      135      );
+      136  
+      137 +    if (rc != 0) {                                            
+      138 +        fprintf(stderr, "crawl: returned %d\n", rc);          
+      139 +        return 1;                                             
+      140 +    }                                                         
+      141 +                                                              
+      142      return 0;
+      143  }
+
+● Update(driver.c)
+  ⎿  Added 2 lines
+      2  #include <stdlib.h>
+      3  #include <string.h>
+      4  #include <errno.h>
+      5 +#include <stdint.h>                                             
+      6 +#include <unistd.h>                                             
+      7  
+      8  #include "api.h"
+      9  
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Backward compatible and building clean. Now the full concurrency matrix
+  through the modified driver.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● One more thing worth confirming: that the threads actually deliver
+  parallelism, not just correctness.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Near-linear speedup — 0.20s → 0.10s → 0.05s → 0.03s as downloaders double. The
+  pools are genuinely overlapping fetches, not just correct.
+
+  Here's exactly what changed in driver.c:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● All three housekeeping steps are done.
+
+  1. Shared library builds
+
+  make clean && make libcrawler.so produces a real ELF x86-64 shared object with
+  zero warnings under -Wall -Werror.
+
+  I did make one code change here. The build was exporting all 20 internal
+  module symbols (lq_init, pool_start, visited_insert, …) — splitting into
+  modules meant cross-module functions couldn't be static, which broke the "only
+  crawl() is exported" goal and risked symbol collisions with a host program.
+  Adding #pragma GCC visibility push(hidden) to the four internal headers fixed
+  it with no Makefile change:
+
+  exported symbols now:  T crawl
+
+  2. Provided driver, unmodified
+
+  ┌────────┬───────┬──────────┬────────────┬──────┐
+  │ corpus │ edges │ expected │ duplicates │ exit │
+  ├────────┼───────┼──────────┼────────────┼──────┤
+  │ test1  │ 7     │ 7        │ 0          │ 0    │
+  ├────────┼───────┼──────────┼────────────┼──────┤
+  │ test2  │ 165   │ 165      │ 0          │ 0    │
+  ├────────┼───────┼──────────┼────────────┼──────┤
+  │ test3  │ 12896 │ 12896    │ 0          │ 0    │
+  └────────┴───────┴──────────┴────────────┴──────┘
+
+  test1's 7 edges match the hand-traced graph exactly. Incidentally, bare
+  ./crawl with no args exercises the dead-seed path — driver.c defaults to a
+  relative test3 that doesn't exist from my-crawler/, and the crawler returns
+  cleanly with 0 edges rather than hanging.
+
+  3. Modified driver.c
+
+  Now takes crawl [dir] [downloaders] [parsers] [queue_size] [delay_us]. Every
+  argument is optional with the original defaults (4/4/10, no delay), so bare
+  ./crawl, ./crawl <dir>, and make run-crawl all behave exactly as before. The
+  delay uses rand_r with a caller-owned seed — plain rand() isn't thread-safe
+  and would have introduced a race in the test harness itself. Config prints to
+  stderr so stdout stays a pipeable edge list.
+
+  23 configurations, all correct, no hangs, no duplicates:
+
+  - Thread counts (test3): 1/1, 1/16, 16/1, 4/4, 16/16, 64/64
+  - Queue sizes (test3): 1, 2, 3, 10, 997, 5000 — q=1 is the tightest deadlock
+  case, where every parser push blocks
+  - Pathological: 64 downloaders + 64 parsers through a queue of 1
+  - With fetch delays up to 20ms across 9 configs, plus 75 repeat runs under
+  delay hunting for lost wakeups
+
+  Parallelism is real — test2 with ~2ms fetch delay: 0.20s → 0.10s → 0.05s →
+  0.03s → 0.02s as downloaders go 1 → 2 → 4 → 8 → 16. Near-linear against a
+  ~200ms serial lower bound.
+
+  valgrind re-verified after the visibility change: memcheck 0 errors / 0 bytes
+  in use at exit, helgrind 0 races.
+
+  One thing to decide: driver.c is a tracked file in the instructor's git repo,
+  so it now shows as modified. I kept it backward compatible precisely so this
+  is safe to leave, but if you'd rather submit against a pristine framework, git
+  -C os-crawler-framework checkout driver.c reverts it — your library needs no
+  change either way.
+
+✻ Baked for 3m 0s
